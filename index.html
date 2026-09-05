@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کاروان</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
 
+  <div id="lockPage" class="page active">
+    <h1>🚐 کاروان</h1>
+    <h2>🔒 ورود نسخه VIP</h2>
+    <input type="password" id="vipCode" placeholder="کد VIP">
+    <br>
+    <button onclick="checkVip()">ورود</button>
+    <p id="lockError"></p>
+  </div>
+
+  <div id="homePage" class="page">
+    <h1>🚐 کاروان</h1>
+    <nav>
+      <button onclick="showPage('page1')">📄 صفحه ۱</button>
+      <button onclick="showPage('page2')">📄 صفحه ۲</button>
+      <button onclick="showPage('page3')">📄 صفحه ۳</button>
+      <button onclick="showPage('page4')">📄 صفحه ۴</button>
+      <button onclick="showPage('page5')">📄 صفحه ۵</button>
+      <button onclick="showPage('page6')">📄 صفحه ۶</button>
+      <button onclick="showPage('page7')">📄 صفحه ۷</button>
+      <button onclick="showPage('page8')">📄 صفحه ۸</button>
+      <button onclick="showPage('profile')">👤 پروفایل (آنلاین)</button>
+      <button onclick="showPage('contact')">📞 تماس با ما (آنلاین)</button>
+    </nav>
+  </div>
+
+  <div id="page1" class="page"><h2>📄 صفحه ۱</h2><p>محتوای صفحه ۱</p><button onclick="showPage('homePage')">بازگشت</button></div>
+  <div id="page2" class="page"><h2>📄 صفحه ۲</h2><p>محتوای صفحه ۲</p><button onclick="showPage('homePage')">بازگشت</button></div>
+  <div id="page3" class="page"><h2>📄 صفحه ۳</h2><p>محتوای صفحه ۳</p><button onclick="showPage('homePage')">بازگشت</button></div>
+  <div id="page4" class="page"><h2>📄 صفحه ۴</h2><p>محتوای صفحه ۴</p><button onclick="showPage('homePage')">بازگشت</button></div>
+  <div id="page5" class="page"><h2>📄 صفحه ۵</h2><p>محتوای صفحه ۵</p><button onclick="showPage('homePage')">بازگشت</button></div>
+  <div id="page6" class="page"><h2>📄 صفحه ۶</h2><p>محتوای صفحه ۶</p><button onclick="showPage('homePage')">بازگشت</button></div>
+  <div id="page7" class="page"><h2>📄 صفحه ۷</h2><p>محتوای صفحه ۷</p><button onclick="showPage('homePage')">بازگشت</button></div>
+  <div id="page8" class="page"><h2>📄 صفحه ۸</h2><p>محتوای صفحه ۸</p><button onclick="showPage('homePage')">بازگشت</button></div>
+
+  <div id="profile" class="page">
+    <h2>👤 پروفایل</h2>
+    <p>این صفحه نیاز به اینترنت دارد</p>
+    <button onclick="loadOnlineContent('profile')">دریافت اطلاعات</button>
+    <div id="profileContent"></div>
+    <br>
+    <button onclick="showPage('homePage')">بازگشت</button>
+  </div>
+
+  <div id="contact" class="page">
+    <h2>📞 تماس با ما</h2>
+    <p>این صفحه نیاز به اینترنت دارد</p>
+    <button onclick="loadOnlineContent('contact')">دریافت اطلاعات</button>
+    <div id="contactContent"></div>
+    <br>
+    <button onclick="showPage('homePage')">بازگشت</button>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+  </html>
