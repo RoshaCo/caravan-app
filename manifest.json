@@ -1,1 +1,8 @@
-
+{
+  "name": "کاروان",
+  "short_name": "کاروان",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff"
+}
